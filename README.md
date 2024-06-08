@@ -15,6 +15,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 - HTML
 - CSS custom properties
+- TypeScript
 - [Bootstrap](https://getbootstrap.com/)
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/en/main)

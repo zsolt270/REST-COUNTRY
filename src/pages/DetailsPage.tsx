@@ -2,7 +2,7 @@
 //itt ellenőrizni hogy paramból megfelelő érték jön-e ha nem akkor error msg-t jelenitsen meg
 //ide kintre majd state-t hogy darkmode-e v sem
 
-export default function CountryPage() {
+export default function DetailsPage() {
 	return (
 		<div>
 			<h2>The country: </h2>

@@ -1,0 +1,2 @@
+ide jönnek a useeffectből az apis function custom hookként(statetalán bele fixen bele a function meg a useeffect) és ezeket a functionket az api mappába a fájl/fajlokba bele
+az api mappába lévő fájl(ok)-at pedig a page filekba importálni vagy a mainbe

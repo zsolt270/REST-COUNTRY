@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import "./main.css";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
-import CountryPage from "./pages/CountryPage";
+import DetailsPage from "./pages/DetailsPage";
 
 const router = createBrowserRouter([
 	{
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/:country",
-		element: <CountryPage />,
+		element: <DetailsPage />,
 	},
 ]);
 

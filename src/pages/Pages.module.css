@@ -1,0 +1,15 @@
+.lightMode {
+	background-color: hsl(0, 0%, 98%);
+	color: hsl(200, 15%, 8%);
+}
+.darkMode {
+	background-color: hsl(207, 26%, 17%);
+	color: hsl(0, 0%, 100%);
+}
+
+.homePageTextSize {
+	font-size: 14px;
+}
+.detailsPageTextSize {
+	font-size: 16px;
+}

@@ -1,7 +1,14 @@
+import styles from "./Select.module.css";
+
 export default function Select() {
 	return (
 		<select className='form-select-sm'>
-			<option selected>Filter by Region</option>
+			<option
+				selected
+				hidden
+			>
+				Filter by Region
+			</option>
 			<option value='Africa'>Africa</option>
 			<option value='America'>America</option>
 			<option value='Asia'>Asia</option>

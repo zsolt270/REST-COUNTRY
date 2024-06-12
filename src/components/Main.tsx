@@ -9,11 +9,11 @@ type ThemeMode = {
 export default function Main({ mode }: ThemeMode) {
 	return (
 		<main
-			className={`pt-4 px-2 px-sm-5 ${
+			className={`pt-4 pt-md-5 px-2 px-sm-5 ${
 				mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
 			}`}
 		>
-			<div className='d-flex justify-content-between'>
+			<div className='d-flex flex-column flex-md-row justify-content-between'>
 				<SearchInput />
 				<Select />
 			</div>

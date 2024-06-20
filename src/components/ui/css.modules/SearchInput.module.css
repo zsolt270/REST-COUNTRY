@@ -19,6 +19,7 @@ i {
 	border: 0.1px solid white;
 	border-radius: 0.4rem;
 }
+/* kéne darkmode class is ezekből */
 
 @media only screen and (max-width: 766px) {
 	.customInputGroup {

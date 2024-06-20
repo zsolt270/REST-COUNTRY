@@ -6,7 +6,7 @@ import Main from "../components/Main.tsx";
 //ide kintre majd state-t hogy darkmode-e v sem és pl contexttel levinni minden elementnek
 
 export default function HomePage() {
-	const [isLight, setIsLight] = useState(true);
+	const [isLight, setIsLight] = useState(true); // ezt lehet contextként kéne átadni, mivel a select és az input + a kártyáknak is kell majd tudnia hogy light-e
 	//ha light akkor a divnél styles.darkmode és
 	return (
 		<div
@@ -14,8 +14,10 @@ export default function HomePage() {
 				isLight ? styles.lightMode : styles.darkMode
 			}`}
 		>
+			{/* ide a context provider */}
 			<Navbar />
 			<Main mode={isLight} />
+			{/* ide a context provider */}
 		</div>
 	);
 }

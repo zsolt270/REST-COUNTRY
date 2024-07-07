@@ -5,6 +5,9 @@
 	border: none;
 	border-radius: 0.4rem;
 }
+input:focus {
+	outline: none;
+}
 i {
 	color: hsl(0, 0%, 52%);
 	font-size: 1rem;

@@ -1,5 +1,17 @@
-select {
-	width: 5rem !important;
+.customeSelect {
+	width: 13em;
+	padding: 0.5em;
+	border: none;
+}
+.customeSelect:focus {
+	outline: none;
+}
+.customeSelect:hover {
+	cursor: pointer;
 }
 
-/* kéne darkmode class is  */
+.customeSelect option::after {
+	content: "";
+	width: 100em;
+	background-color: red;
+}

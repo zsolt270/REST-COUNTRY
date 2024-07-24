@@ -1,0 +1,37 @@
+.select {
+	background-color: var(--whiteModeInputColors);
+	border: 1px solid var(--whiteModeInputColors);
+	border-radius: 0.35em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.1em;
+	min-width: 14em;
+}
+.select p {
+	margin-bottom: 0;
+}
+.select i {
+	font-size: 0.8em;
+	color: black;
+	font-weight: 700;
+}
+.options {
+	margin-top: 0.25em;
+	/* border: 1px solid black; */
+	border-radius: 0.35em;
+	min-width: 14em;
+	background-color: var(--whiteModeInputColors);
+	list-style-type: none;
+	position: absolute;
+}
+.options li {
+	margin-bottom: 0.25em;
+}
+.options li:first-child {
+	margin-top: 0.25em;
+}
+.options:hover,
+.select:hover {
+	cursor: pointer;
+}

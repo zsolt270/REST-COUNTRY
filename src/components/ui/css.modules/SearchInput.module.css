@@ -9,7 +9,7 @@ input:focus {
 	outline: none;
 }
 i {
-	color: hsl(0, 0%, 52%);
+	color: var(--iconColors);
 	font-size: 1rem;
 	-webkit-text-stroke: 0.5px;
 	padding-left: 1.8rem;
@@ -18,7 +18,7 @@ i {
 	display: flex;
 	align-items: center;
 	gap: 1.3rem;
-	background-color: hsl(0, 0%, 100%);
+	background-color: var(--whiteModeInputColors);
 	border: 0.1px solid white;
 	border-radius: 0.4rem;
 }

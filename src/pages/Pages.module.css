@@ -1,10 +1,10 @@
 .lightMode {
-	background-color: hsl(0, 0%, 98%);
-	color: hsl(200, 15%, 8%);
+	background-color: var(--lightModeBg);
+	color: var(--lightModeTxtColor);
 }
 .darkMode {
-	background-color: hsl(207, 26%, 17%);
-	color: hsl(0, 0%, 100%);
+	background-color: var(--darkModeBg);
+	color: var(--darkModeTxtColor);
 }
 
 .homePageTextSize {

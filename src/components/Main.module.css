@@ -1,6 +1,6 @@
 .lightModeElements {
-	background-color: hsl(0, 0%, 95%);
+	background-color: var(--lightModeElements);
 }
 .darkModeElements {
-	background-color: hsl(209, 23%, 22%);
+	background-color: var(--darkModeElements);
 }

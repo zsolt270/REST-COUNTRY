@@ -1,3 +1,5 @@
+import type { HomePageCountries } from "../services/api/apiTypes.ts";
+
 import CountryCard from "./CountryCard.tsx";
 import themes from "./Main.module.css";
 import Select from "./Select.tsx";
@@ -5,9 +7,10 @@ import SearchInput from "./ui/SearchInput.tsx";
 
 type ThemeMode = {
 	mode: boolean;
+	countries: HomePageCountries;
 };
 
-export default function Main({ mode }: ThemeMode) {
+export default function Main({ mode, countries }: ThemeMode) {
 	return (
 		<main
 			className={`pt-4 pt-md-5 px-2 px-sm-5 ${

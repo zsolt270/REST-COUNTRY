@@ -14,10 +14,7 @@ export default function Error({ mode }: ThemeMode) {
 		>
 			<h1>Something went wrong!</h1>
 			<h2 className='mb-3'>Please try again.</h2>
-			<TryAgainButton
-				text='Try again!'
-				isLight={mode}
-			/>
+			<TryAgainButton isLight={mode} />
 		</div>
 	);
 }

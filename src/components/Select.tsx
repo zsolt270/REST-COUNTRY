@@ -5,11 +5,15 @@ type Continents = "Africa" | "America" | "Asia" | "Europe" | "Oceania";
 
 export default function Select() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [value, setValue] = useState("Filter by Region");
 	const openSelect = () => {
 		setIsOpen(!isOpen);
 	};
 
 	const handleSelectQuery = (continent: Continents) => {
+		setValue(continent);
+		setIsOpen(false);
+		//ide a karesését
 		console.log(continent);
 	};
 
@@ -19,7 +23,7 @@ export default function Select() {
 				className={styles.select}
 				onClick={openSelect}
 			>
-				<p>Filter by Region</p>
+				<p>{value}</p>
 				<i className='bi bi-chevron-down'></i>
 			</div>
 			{isOpen ? (

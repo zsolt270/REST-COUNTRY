@@ -2,11 +2,10 @@ import { useNavigate } from "react-router-dom";
 import styles from "./css.modules/Buttons.module.css";
 
 type ButtonProps = {
-	text: string;
 	isLight: boolean;
 };
 
-export function TryAgainButton({ text, isLight }: ButtonProps) {
+export function TryAgainButton({ isLight }: ButtonProps) {
 	const navigate = useNavigate();
 
 	const refreshPage = () => {
@@ -19,7 +18,7 @@ export function TryAgainButton({ text, isLight }: ButtonProps) {
 			}`}
 			onClick={refreshPage}
 		>
-			{text}
+			Try again!
 		</button>
 	);
 }

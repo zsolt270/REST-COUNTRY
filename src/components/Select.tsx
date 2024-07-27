@@ -13,7 +13,7 @@ export default function Select() {
 	const handleSelectQuery = (continent: Continents) => {
 		setValue(continent);
 		setIsOpen(false);
-		//ide a karesését
+		//ide a keresést
 		console.log(continent);
 	};
 

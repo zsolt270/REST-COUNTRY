@@ -7,10 +7,30 @@ import SearchInput from "./ui/SearchInput.tsx";
 
 type ThemeMode = {
 	mode: boolean;
-	countries: HomePageCountries;
+	countries: HomePageCountries[];
 };
 
 export default function Main({ mode, countries }: ThemeMode) {
+	console.log(countries);
+	// console.log(countries[0]);
+	// console.log(countries[0].name);
+
+	const countryList = countries.map((country) => {
+		return (
+			<>
+				<img
+					src={`${country.flags.png}`}
+					alt={`${country.flags.alt}`}
+				/>
+				<ul>
+					<li>{country.name.common}</li>
+					<li>{country.population}</li>
+					<li>{country.region}</li>
+					<li>{country.capital}</li>
+				</ul>
+			</>
+		);
+	});
 	return (
 		<main
 			className={`pt-4 pt-md-5 px-2 px-sm-5 ${
@@ -23,6 +43,7 @@ export default function Main({ mode, countries }: ThemeMode) {
 			</div>
 			<div>
 				<CountryCard />
+				{countryList}
 			</div>
 		</main>
 	);

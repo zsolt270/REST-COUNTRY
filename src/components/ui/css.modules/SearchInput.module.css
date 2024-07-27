@@ -21,7 +21,7 @@ i {
 	background-color: var(--whiteModeInputColors);
 	border: 0.1px solid white;
 	border-radius: 0.4rem;
-	box-shadow: 1px 1px 4px 3px hsl(0, 0%, 90%);
+	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
 }
 /* kéne darkmode class is ezekből */
 

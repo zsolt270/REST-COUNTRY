@@ -7,7 +7,7 @@
 	background-color: var(--whiteModeInputColors);
 	border: 1px solid var(--whiteModeInputColors);
 	border-radius: 0.35em;
-	box-shadow: 1px 1px 4px 3px hsl(0, 0%, 90%);
+	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
 }
 .select p {
 	margin-bottom: 0;

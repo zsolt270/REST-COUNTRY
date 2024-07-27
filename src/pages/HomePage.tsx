@@ -23,7 +23,7 @@ export default function HomePage() {
 	const [countries, setCountries] = useState<HomePageCountries[]>([]);
 	useEffect(() => {
 		const fetchCountries = async () => {
-			// setIsLoading(true);
+			setIsLoading(true);
 			try {
 				const response = await fetch(
 					"https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital"
@@ -34,10 +34,9 @@ export default function HomePage() {
 				console.log(error);
 				setError(true);
 			} finally {
-				// setIsLoading(false);
+				setIsLoading(false);
 			}
 		};
-
 		fetchCountries();
 	}, []);
 	if (error) {

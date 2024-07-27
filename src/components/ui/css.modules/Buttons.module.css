@@ -13,3 +13,9 @@
 	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
 	font-weight: 600;
 }
+.btn:hover {
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
+}
+.btn:active {
+	box-shadow: 1px 1px 5px 5px inset hsl(0, 0%, 70%);
+}

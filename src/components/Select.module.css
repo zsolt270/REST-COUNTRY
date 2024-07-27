@@ -33,6 +33,9 @@
 .options li:first-child {
 	margin-top: 0.25em;
 }
+.options li:hover {
+	font-weight: 700;
+}
 .options:hover,
 .select:hover {
 	cursor: pointer;

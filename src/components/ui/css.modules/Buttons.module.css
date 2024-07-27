@@ -1,0 +1,15 @@
+.lightButton {
+	background-color: var(--whiteModeInputColors);
+}
+
+.darkButton {
+	background-color: var(--darkModeElements);
+}
+
+.btn {
+	padding: 0.4em 2em;
+	border-radius: 0.4rem;
+	border: 0.1px solid white;
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
+	font-weight: 600;
+}

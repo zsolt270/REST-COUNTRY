@@ -1,0 +1,9 @@
+.errorDiv {
+	min-height: 82em;
+}
+.lightErrorDivBG {
+	background-color: var(--lightModeElements);
+}
+.darkErrorDivBG {
+	background-color: var(--darkModeElements);
+}

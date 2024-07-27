@@ -6,7 +6,7 @@ export default function Header() {
 			<p className={`fw-bold mb-0 ${style.fsSmall}`}>Where in the world?</p>
 			<div className='d-flex gap-1 gap-sm-2 align-items-center'>
 				<i className='fs-6 bi bi-moon'></i>
-				<p className='fw-bolder fs-5 mb-0'>Dark Mode</p>
+				<p className='fw-bolder fs-6 mb-0'>Dark Mode</p>
 			</div>
 		</header>
 	);

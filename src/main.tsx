@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 	},
 	{
-		path: "/:country",
+		path: "/country/:country",
 		element: <DetailsPage />,
 	},
 ]);

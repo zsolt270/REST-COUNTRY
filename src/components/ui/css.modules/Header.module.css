@@ -1,6 +1,9 @@
 .fsSmall {
 	font-size: calc(1.325rem + 0.9vw);
 }
+header div:hover {
+	cursor: pointer;
+}
 @media only screen and (max-width: 576px) {
 	.fsSmall {
 		font-size: 1.3rem;

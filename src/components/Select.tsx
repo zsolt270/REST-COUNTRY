@@ -1,18 +1,20 @@
 import { useState } from "react";
 import styles from "./Select.module.css";
 
+type Continents = "Africa" | "America" | "Asia" | "Europe" | "Oceania";
+
 export default function Select() {
 	const [isOpen, setIsOpen] = useState(false);
 	const openSelect = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const handleSelectQuery = (continent: string) => {
+	const handleSelectQuery = (continent: Continents) => {
 		console.log(continent);
 	};
 
 	return (
-		<div>
+		<div className=''>
 			<div
 				className={styles.select}
 				onClick={openSelect}

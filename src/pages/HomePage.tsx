@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import styles from "./Pages.module.css";
 import Header from "../components/ui/Header.tsx";
 import Main from "../components/Main.tsx";
 import Loading from "../components/Loading.tsx";
 import Error from "../components/Error.tsx";
-import { useFetchCountries } from "../services/api/useFetchCountries.ts";
+import { useFetchCountries } from "../hooks/useFetchCountries.ts";
 //itt az api request, talán elmenteni egy tömbbe és majd abból keresni a filterrel az input értékek meg a select opciók szerint
 //ide kintre majd state-t hogy darkmode-e v sem és pl contexttel levinni minden elementnek
 
@@ -19,14 +19,15 @@ export default function HomePage() {
 	// const [loading, setIsLoading] = useState(false);
 	// const [error, setError] = useState();
 	// const [countries, setCountries] = useState<HomePageCountries[]>([]);
-	const { countries, error, loading }: HomePageCountries | any | boolean =
-		useFetchCountries(
-			"https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital"
-		);
-
-	console.log(countries);
-	console.log(error);
-	console.log(loading);
+	const {
+		countries,
+		setCountries,
+		error,
+		loading,
+	}: HomePageCountries | any | boolean = useFetchCountries("all");
+	// console.log(countries);
+	// console.log(error);
+	// console.log(loading);
 	// const abortControllerRef = useRef<AbortController | null>(null);
 
 	// useEffect(() => {
@@ -83,6 +84,7 @@ export default function HomePage() {
 				<Main
 					mode={isLight}
 					countries={countries}
+					setCountries={setCountries}
 				/>
 			)}
 			{/* ide a context provider */}

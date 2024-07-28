@@ -1,20 +1,45 @@
-import { useState } from "react";
+import type { HomePageCountries } from "../services/api/apiTypes.ts";
+import { useEffect, useState } from "react";
 import styles from "./Select.module.css";
+import { fetchSelectedRegion } from "../services/api/fetchSelectedRegion.ts";
 
-type Continents = "Africa" | "America" | "Asia" | "Europe" | "Oceania";
+type Continents = "Africa" | "Americas" | "Asia" | "Europe" | "Oceania";
 
-export default function Select() {
+type SelectProp = {
+	countries: HomePageCountries[];
+	setCountries: (countries: HomePageCountries[]) => void;
+};
+
+export default function Select({ countries, setCountries }: SelectProp) {
 	const [isOpen, setIsOpen] = useState(false);
-	const [value, setValue] = useState("Filter by Region");
+	const [selectValue, setSelectValue] = useState("Filter by Region");
+	// const [filteredCountries, setFilteredCountries] = useState<
+	// 	HomePageCountries[]
+	// >([]);
+
+	// useEffect(() => {
+	// 	setCountries(filteredCountries);
+	// 	console.log(countries);
+	// }, []);
+
 	const openSelect = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const handleSelectQuery = (continent: Continents) => {
-		setValue(continent);
+	const handleSelectQuery = async (continent: Continents) => {
+		setSelectValue(continent);
 		setIsOpen(false);
-		//ide a keresést
-		console.log(continent);
+
+		const filteredCountries = await fetchSelectedRegion(continent);
+		setCountries(filteredCountries);
+
+		// console.log(countries.filter((country) => country.region == continent));
+		// const filteredCountries = countries.filter(
+		// 	(country) => country.region == continent
+		// );
+		// setCountries(filteredCountries);
+
+		//fetchelem és azt adom vissza a setcountriesnak és akkor mindig az lesz amit kell fetchelni
 	};
 
 	return (
@@ -23,7 +48,7 @@ export default function Select() {
 				className={styles.select}
 				onClick={openSelect}
 			>
-				<p>{value}</p>
+				<p>{selectValue}</p>
 				<i className='bi bi-chevron-down'></i>
 			</div>
 			{isOpen ? (
@@ -37,7 +62,7 @@ export default function Select() {
 					</li>
 					<li
 						onClick={() => {
-							handleSelectQuery("America");
+							handleSelectQuery("Americas");
 						}}
 					>
 						America

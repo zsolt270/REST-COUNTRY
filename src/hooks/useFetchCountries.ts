@@ -1,27 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react";
-import type { HomePageCountries } from "./apiTypes.ts";
+import type { HomePageCountries } from "../services/api/apiTypes.ts";
 
-export const useFetchCountries = (url: string) => {
+export const useFetchCountries = (urlParam: string) => {
 	const [loading, setIsLoading] = useState(false);
 	const [error, setError] = useState();
+
 	const [countries, setCountries] = useState<HomePageCountries[]>([]);
 
 	const abortControllerRef = useRef<AbortController | null>(null);
-	console.log("before useeffect");
 	useEffect(() => {
-		console.log("valami nulla");
 		const fetchCountries = async () => {
-			console.log("valami first");
 			abortControllerRef.current?.abort();
 			abortControllerRef.current = new AbortController();
 			setIsLoading(true);
 			try {
-				const response = await fetch(url, {
-					signal: abortControllerRef.current?.signal,
-				});
+				const response = await fetch(
+					`https://restcountries.com/v3.1/${urlParam}?fields=flags,name,population,region,capital`,
+					{
+						signal: abortControllerRef.current?.signal,
+					}
+				);
 				const data = (await response.json()) as HomePageCountries[];
-				console.log(data);
 				setCountries(data);
 			} catch (error: any) {
 				if (error.name === "AbortError") {
@@ -34,8 +34,7 @@ export const useFetchCountries = (url: string) => {
 			}
 		};
 		fetchCountries();
-	}, [url]);
+	}, [urlParam]);
 
-	console.log("valami second");
-	return { countries, error, loading };
+	return { countries, setCountries, error, loading };
 };

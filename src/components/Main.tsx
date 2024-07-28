@@ -11,10 +11,6 @@ type ThemeMode = {
 };
 
 export default function Main({ mode, countries }: ThemeMode) {
-	console.log(countries);
-	// console.log(countries[0]);
-	// console.log(countries[0].name);
-
 	const countryList = countries.map((country) => {
 		return (
 			<>

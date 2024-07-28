@@ -15,7 +15,11 @@ export default function Header({ setIsLight, isLight }: HeaderProps) {
 					setIsLight(!isLight);
 				}}
 			>
-				<i className='fs-6 bi bi-moon'></i>
+				<i
+					className={`fs-6 bi ${
+						isLight ? `bi-moon ` : `bi-moon-fill text-white`
+					}`}
+				></i>
 				<p className='fw-bolder fs-6 mb-0'>Dark Mode</p>
 			</div>
 		</header>

@@ -5,6 +5,7 @@
 	justify-content: space-between;
 	padding: 1.1em 1.2em 1.1em 1.5em;
 	background-color: var(--whiteModeInputColors);
+	color: var(--lightModeTxtColor);
 	border: 1px solid var(--whiteModeInputColors);
 	border-radius: 0.35em;
 	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
@@ -23,6 +24,7 @@
 	border-radius: 0.35em;
 	min-width: 14em;
 	background-color: var(--whiteModeInputColors);
+	color: var(--lightModeTxtColor);
 	list-style-type: none;
 	position: absolute;
 }

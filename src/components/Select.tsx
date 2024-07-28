@@ -1,16 +1,15 @@
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./css.modules/Select.module.css";
 import { fetchSelectedRegion } from "../services/api/fetchSelectedRegion.ts";
 
 type Continents = "Africa" | "Americas" | "Asia" | "Europe" | "Oceania";
 
 type SelectProp = {
-	countries: HomePageCountries[];
 	setCountries: (countries: HomePageCountries[]) => void;
 };
 
-export default function Select({ countries, setCountries }: SelectProp) {
+export default function Select({ setCountries }: SelectProp) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectValue, setSelectValue] = useState("Filter by Region");
 	// const [filteredCountries, setFilteredCountries] = useState<
@@ -30,11 +29,13 @@ export default function Select({ countries, setCountries }: SelectProp) {
 		setSelectValue(continent);
 		setIsOpen(false);
 
-		const filteredCountries = await fetchSelectedRegion(continent);
+		const filteredCountries = (await fetchSelectedRegion(
+			continent
+		)) as HomePageCountries[];
 		setCountries(filteredCountries);
 
 		// console.log(countries.filter((country) => country.region == continent));
-		// const filteredCountries = countries.filter(
+		// const filteredCountries = defaultCountries.filter(
 		// 	(country) => country.region == continent
 		// );
 		// setCountries(filteredCountries);
@@ -43,7 +44,7 @@ export default function Select({ countries, setCountries }: SelectProp) {
 	};
 
 	return (
-		<div className=''>
+		<div>
 			<div
 				className={styles.select}
 				onClick={openSelect}

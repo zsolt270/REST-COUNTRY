@@ -63,7 +63,10 @@ export default function HomePage() {
 				}`}
 			>
 				{/* ide a context provider */}
-				<Header />
+				<Header
+					setIsLight={setIsLight}
+					isLight={isLight}
+				/>
 				<Error mode={isLight} />
 				{/* ide a context provider */}
 			</div>
@@ -76,7 +79,10 @@ export default function HomePage() {
 			}`}
 		>
 			{/* ide a context provider */}
-			<Header />
+			<Header
+				setIsLight={setIsLight}
+				isLight={isLight}
+			/>
 
 			{loading ? (
 				<Loading mode={isLight} />

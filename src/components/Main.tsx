@@ -13,9 +13,6 @@ type ThemeMode = {
 };
 
 export default function Main({ mode, countries, setCountries }: ThemeMode) {
-	// console.log(countries);
-	// const [filteredCountries, setFilteredCountries] = useState(countries);
-	// console.log(filteredCountries + "filteredcountries");
 	const countryList = countries.map((country) => {
 		return (
 			<Fragment key={country.name.common}>
@@ -38,12 +35,9 @@ export default function Main({ mode, countries, setCountries }: ThemeMode) {
 				mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
 			}`}
 		>
-			<div className='d-flex flex-column flex-md-row justify-content-between mb-5'>
+			<div className='d-block d-md-flex flex-column flex-md-row justify-content-between gap-3 mb-5'>
 				<SearchInput />
-				<Select
-					countries={countries}
-					setCountries={setCountries}
-				/>
+				<Select setCountries={setCountries} />
 			</div>
 			<div>
 				<CountryCard />

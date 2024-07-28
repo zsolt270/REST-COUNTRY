@@ -1,6 +1,6 @@
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import { useEffect, useState } from "react";
-import styles from "./Select.module.css";
+import styles from "./css.modules/Select.module.css";
 import { fetchSelectedRegion } from "../services/api/fetchSelectedRegion.ts";
 
 type Continents = "Africa" | "Americas" | "Asia" | "Europe" | "Oceania";

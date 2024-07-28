@@ -1,4 +1,4 @@
-import styles from "./Loading.module.css";
+import styles from "./css.modules/Loading.module.css";
 
 type ThemeMode = {
 	mode: boolean;

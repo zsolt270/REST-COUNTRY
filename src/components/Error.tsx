@@ -1,4 +1,4 @@
-import styles from "./Error.module.css";
+import styles from "./css.modules/Error.module.css";
 import { TryAgainButton } from "./ui/Buttons.tsx";
 
 type ThemeMode = {

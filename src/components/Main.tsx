@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 
 import CountryCard from "./CountryCard.tsx";
-import themes from "./Main.module.css";
+import themes from "./css.modules/Main.module.css";
 import Select from "./Select.tsx";
 import SearchInput from "./ui/SearchInput.tsx";
 

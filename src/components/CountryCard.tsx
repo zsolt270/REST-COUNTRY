@@ -12,10 +12,10 @@ export default function CountryCard({ countries }: CountryCardProps) {
 			return (
 				<div
 					key={country.name.common}
-					className='col d-flex justify-content-center mx-5'
+					className='col d-flex justify-content-center '
 				>
 					<div
-						className={`card mb-5 ${styles.cardElement}`}
+						className='card mb-5'
 						style={{ width: "18rem" }}
 					>
 						<img
@@ -41,24 +41,7 @@ export default function CountryCard({ countries }: CountryCardProps) {
 				</div>
 			);
 		});
-
-		const cardsLayout = countryList.map((country, index) => {
-			if (index % 4 == 0 || index != 0) {
-				return (
-					<div
-						key={index}
-						className='row'
-					>
-						{countryList.slice(index - 4, index).map((countryElement) => {
-							return countryElement;
-						})}
-					</div>
-				);
-			} else {
-				return <></>;
-			}
-		});
-		return cardsLayout;
+		return <div className='row'>{countryList}</div>;
 	} catch (error) {
 		console.log(error);
 		return (

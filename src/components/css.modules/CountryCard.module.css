@@ -6,10 +6,3 @@
 	width: 286px;
 	height: 172px;
 }
-.cardsDiv {
-	display: grid;
-	grid-template-columns: auto auto auto auto auto;
-	gap: 50px 100px;
-}
-.cardElement {
-}

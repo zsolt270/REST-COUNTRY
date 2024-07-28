@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import styles from "./css.modules/CountryCard.module.css";
 
@@ -9,9 +10,12 @@ export default function CountryCard({ countries }: CountryCardProps) {
 	try {
 		const countryList = countries.map((country) => {
 			return (
-				<div className='col mb-5'>
+				<div
+					key={country.name.common}
+					className='col d-flex justify-content-center mx-5'
+				>
 					<div
-						className='card'
+						className={`card mb-5 ${styles.cardElement}`}
 						style={{ width: "18rem" }}
 					>
 						<img
@@ -37,7 +41,24 @@ export default function CountryCard({ countries }: CountryCardProps) {
 				</div>
 			);
 		});
-		return <div className='row justify-content-center'>{countryList}</div>;
+
+		const cardsLayout = countryList.map((country, index) => {
+			if (index % 4 == 0 || index != 0) {
+				return (
+					<div
+						key={index}
+						className='row'
+					>
+						{countryList.slice(index - 4, index).map((countryElement) => {
+							return countryElement;
+						})}
+					</div>
+				);
+			} else {
+				return <></>;
+			}
+		});
+		return cardsLayout;
 	} catch (error) {
 		console.log(error);
 		return (

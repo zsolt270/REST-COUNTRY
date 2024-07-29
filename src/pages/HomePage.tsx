@@ -1,15 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useFetchCountries } from "../hooks/useFetchCountries.ts";
+import { useLocation } from "react-router-dom";
+import { ThemeContext } from "../services/providers/themeContext.tsx";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import styles from "./Pages.module.css";
 import Header from "../components/ui/Header.tsx";
 import Main from "../components/Main.tsx";
 import Loading from "../components/Loading.tsx";
 import Error from "../components/Error.tsx";
-import { useFetchCountries } from "../hooks/useFetchCountries.ts";
-import { useLocation } from "react-router-dom";
 
 export default function HomePage() {
+	const themeContext = useContext(ThemeContext);
+	console.log(themeContext.islight);
 	const [isLight, setIsLight] = useState(true); // ezt lehet contextként kéne átadni, mivel a select és az input + a kártyáknak is kell majd tudnia hogy light-e
 	const location = useLocation();
 	//ha light akkor a divnél styles.darkmode és

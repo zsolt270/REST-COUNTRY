@@ -9,8 +9,6 @@ import Error from "../components/Error.tsx";
 import { useFetchCountries } from "../hooks/useFetchCountries.ts";
 import { useLocation } from "react-router-dom";
 
-// import { fetchCountries } from "../services/api/fetchCountries.ts";
-
 export default function HomePage() {
 	const [isLight, setIsLight] = useState(true); // ezt lehet contextként kéne átadni, mivel a select és az input + a kártyáknak is kell majd tudnia hogy light-e
 	const location = useLocation();

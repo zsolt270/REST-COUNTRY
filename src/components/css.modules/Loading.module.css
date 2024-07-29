@@ -1,8 +1,10 @@
 .lightLoadingDivBG {
 	background-color: var(--lightModeElements);
+	min-height: 82em;
 }
 .darkLoadingDivBG {
 	background-color: var(--darkModeElements);
+	min-height: 82em;
 }
 
 .dots::after {

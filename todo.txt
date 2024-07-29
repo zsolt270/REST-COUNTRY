@@ -1,5 +1,6 @@
--detailsPage 11-max 15ig
 -darkmode 15-18ig
 -context-ekre váltani de csak a light modet és azt lehet a mainbe ahol a routing van oda és akkor mindenütt nem csak egxy oldalon elérhető 
 18-20ig ezt új branchen
 
+ahova kell az islight: 
+-

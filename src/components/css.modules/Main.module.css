@@ -6,3 +6,24 @@
 	background-color: var(--darkModeElements);
 	min-height: 82em;
 }
+.lightBorderCountry {
+	background-color: var(--whiteModeInputColors);
+	color: var(--darkModeElements);
+}
+.darkBorderCountry {
+	background-color: var(--darkModeElements);
+	color: var(--lightModeElements);
+}
+.lightBorderCountry,
+.darkBorderCountry {
+	padding: 0.3em 2.5em;
+	display: inline-flex;
+	align-items: center;
+	border: 0.1px solid white;
+	border-radius: 0.4rem;
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
+	font-size: 0.8em;
+}
+.img {
+	min-width: 100%;
+}

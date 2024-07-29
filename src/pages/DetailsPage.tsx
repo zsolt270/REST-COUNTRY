@@ -36,11 +36,7 @@ export default function DetailsPage() {
 			</div>
 		);
 	}
-	// try {
-	// 	console.log(countries[0].name.nativeName);
-	// } catch {
-	// 	console.log("nem sikerült");
-	// }
+
 	return (
 		<div
 			className={`container-fluid px-0 ${
@@ -54,7 +50,6 @@ export default function DetailsPage() {
 			{loading ? (
 				<Loading mode={isLight} />
 			) : (
-				// <div>valami</div>
 				<Main
 					mode={isLight}
 					path={path[1]}
@@ -62,7 +57,6 @@ export default function DetailsPage() {
 					setCountries={setCountries}
 				/>
 			)}
-			{/* ide kéne a main component átdolgozva úgy hogy paramként bemegy a url és a szerint returnel, ha "/" akkor a homepaget, ha /country/... akkor pedig a detailspage mainét */}
 		</div>
 	);
 }

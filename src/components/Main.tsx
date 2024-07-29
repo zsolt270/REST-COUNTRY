@@ -50,7 +50,24 @@ export default function Main({
 			const languages = Object.keys(countries[0].languages).map((language) => {
 				return countries[0].languages[language] + ", ";
 			});
-			console.log(nativeNames);
+			const borderCountries = countries[0].borders.map(
+				(borderCountry: string) => {
+					return (
+						<div
+							key={borderCountry}
+							className='col col-xxl-2'
+						>
+							<p
+								className={`${
+									mode ? themes.lightBorderCountry : themes.darkBorderCountry
+								} `}
+							>
+								{borderCountry}
+							</p>
+						</div>
+					);
+				}
+			);
 
 			return (
 				<main
@@ -62,22 +79,22 @@ export default function Main({
 						isLight={true}
 						from='detailsPage'
 					/>
-					<div className='row align-items-center mt-5'>
-						<div className='col'>
+					<div className='row mt-5 gap-5'>
+						<div className='col-12 col-md-7 col-lg-6 col-xxl-4'>
 							<img
-								className='img-fluid'
+								className={`${themes.img}`}
 								src={countries[0].flags.png}
 								alt={countries[0].flags.alt}
 							/>
 						</div>
-						<div className='col'>
-							<div className='row'>
+						<div className='col ms-xxl-5 mt-lg-4 mt-xl-5'>
+							<div className='row mb-4'>
 								<div className='col'>
 									<h3 className='fw-bolder'>{countries[0].name.common}</h3>
 								</div>
 							</div>
-							<div className='row'>
-								<div className='col'>
+							<div className='row mb-4 mb-md-0'>
+								<div className='col-12 col-md mb-4 mb-md-0'>
 									<div className='row'>
 										<p>
 											<span className='fw-bold'>Native Name: </span>
@@ -135,10 +152,11 @@ export default function Main({
 								</div>
 							</div>
 							<div className='row'>
-								<div className=' d-flex'>
-									<p className=' fw-bold'>Border Countries: </p>
-									{countries[0].borders}
-									{/* itt lehet több */}
+								<div className='col-lg-3 col-xxl-2'>
+									<p className='fw-bold mb-0'>Border Countries: </p>
+								</div>
+								<div className='col'>
+									<div className='row mt-3 mt-lg-0'>{borderCountries}</div>
 								</div>
 							</div>
 						</div>
@@ -148,6 +166,21 @@ export default function Main({
 		} catch (error) {
 			console.log(error);
 			console.log("map nem sikerült");
+			return (
+				<main
+					className={`pt-4 pt-md-5 px-2 px-sm-5 ${
+						mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
+					}`}
+				>
+					<BackToHomePage
+						isLight={true}
+						from='detailsPage'
+					/>
+					<div className='text-center mt-5'>
+						<h1>No more information about this country!</h1>
+					</div>
+				</main>
+			);
 		}
 	}
 }

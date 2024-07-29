@@ -1,6 +1,8 @@
 .lightModeElements {
 	background-color: var(--lightModeElements);
+	min-height: 82em;
 }
 .darkModeElements {
 	background-color: var(--darkModeElements);
+	min-height: 82em;
 }

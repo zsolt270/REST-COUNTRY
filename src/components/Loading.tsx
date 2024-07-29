@@ -7,7 +7,7 @@ type ThemeMode = {
 export default function Loading({ mode }: ThemeMode) {
 	return (
 		<div
-			className={`text-center pt-5 ${styles.loadingDiv} ${
+			className={`text-center pt-5  ${
 				mode ? `${styles.lightLoadingDivBG}` : `${styles.darkLoadingDivBG}`
 			}`}
 		>

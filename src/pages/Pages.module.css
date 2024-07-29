@@ -13,3 +13,11 @@
 .detailsPageTextSize {
 	font-size: 16px;
 }
+.errorPageMain {
+	min-height: 82em;
+	background-color: var(--lightModeElements);
+}
+.errorPageMainDark {
+	min-height: 82em;
+	background-color: var(--darkModeBg);
+}

@@ -1,0 +1,4 @@
+-detailsPage
+-darkmode
+-context-ekre váltani
+

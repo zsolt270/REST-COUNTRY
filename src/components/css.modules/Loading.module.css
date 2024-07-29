@@ -1,6 +1,3 @@
-.loadingDiv {
-	min-height: 82em;
-}
 .lightLoadingDivBG {
 	background-color: var(--lightModeElements);
 }

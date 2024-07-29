@@ -1,21 +1,37 @@
 .lightButton {
 	background-color: var(--whiteModeInputColors);
+	color: var(--darkModeElements);
 }
 
 .darkButton {
 	background-color: var(--darkModeElements);
+	color: var(--lightModeElements);
 }
 
-.btn {
+.btn,
+.backBtn {
 	padding: 0.4em 2em;
 	border-radius: 0.4rem;
 	border: 0.1px solid white;
 	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
 	font-weight: 600;
 }
-.btn:hover {
+.backBtn {
+	padding: 0.1em 1.5em;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7em;
+	text-decoration: none;
+}
+.backBtn i {
+	padding-top: 0.1em;
+}
+
+.btn:hover,
+.backBtn:hover {
 	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
 }
-.btn:active {
+.btn:active,
+.backBtn:active {
 	box-shadow: 1px 1px 5px 5px inset hsl(0, 0%, 70%);
 }

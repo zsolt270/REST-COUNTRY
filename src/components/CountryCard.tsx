@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import styles from "./css.modules/CountryCard.module.css";
 

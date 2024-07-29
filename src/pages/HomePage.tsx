@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useFetchCountries } from "../hooks/useFetchCountries.ts";
 import { useLocation } from "react-router-dom";
 import { ThemeContext } from "../services/providers/themeContext.tsx";
@@ -12,8 +12,7 @@ import Error from "../components/Error.tsx";
 
 export default function HomePage() {
 	const themeContext = useContext(ThemeContext);
-	console.log(themeContext.islight);
-	const [isLight, setIsLight] = useState(true); // ezt lehet contextként kéne átadni, mivel a select és az input + a kártyáknak is kell majd tudnia hogy light-e
+	// const [isLight, setIsLight] = useState(true);
 	const location = useLocation();
 	//ha light akkor a divnél styles.darkmode és
 	// const [loading, setIsLoading] = useState(false);
@@ -32,33 +31,35 @@ export default function HomePage() {
 		return (
 			<div
 				className={`container-fluid px-0 ${
-					isLight ? styles.lightMode : styles.darkMode
+					themeContext?.islight ? styles.lightMode : styles.darkMode
 				}`}
 			>
 				<Header
-					setIsLight={setIsLight}
-					isLight={isLight}
+				// setIsLight={setIsLight}
+				// isLight={isLight}
 				/>
-				<Error mode={isLight} />
+				<Error />
+				{/* <Error mode={isLight} /> */}
 			</div>
 		);
 	}
 	return (
 		<div
 			className={`container-fluid px-0 ${
-				isLight ? styles.lightMode : styles.darkMode
+				themeContext?.islight ? styles.lightMode : styles.darkMode
 			}`}
 		>
 			<Header
-				setIsLight={setIsLight}
-				isLight={isLight}
+			// setIsLight={setIsLight}
+			// isLight={isLight}
 			/>
 
 			{loading ? (
-				<Loading mode={isLight} />
+				<Loading />
 			) : (
+				// <Loading mode={isLight} />
 				<Main
-					mode={isLight}
+					// mode={isLight}
 					path={location.pathname}
 					countries={countries}
 					setCountries={setCountries}

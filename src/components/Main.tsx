@@ -5,25 +5,25 @@ import CountryCard from "./CountryCard.tsx";
 import themes from "./css.modules/Main.module.css";
 import Select from "./Select.tsx";
 import SearchInput from "./SearchInput.tsx";
+import { ThemeContext } from "../services/providers/themeContext.tsx";
+import { useContext } from "react";
 
 type MainProps = {
-	mode: boolean;
 	path: string;
 	countries: HomePageCountries[] | DetailsPageCountry[];
 	setCountries?: () => void;
 };
 
-export default function Main({
-	mode,
-	path,
-	countries,
-	setCountries,
-}: MainProps) {
+export default function Main({ path, countries, setCountries }: MainProps) {
+	const themeContext = useContext(ThemeContext);
+
 	if (path == "/") {
 		return (
 			<main
 				className={`pt-4 pt-md-5 px-2 px-sm-5 ${
-					mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
+					themeContext?.islight
+						? `${themes.lightModeElements}`
+						: `${themes.darkModeElements}`
 				}`}
 			>
 				<div className='d-block d-md-flex flex-column flex-md-row justify-content-between gap-3 mb-5'>
@@ -59,7 +59,9 @@ export default function Main({
 						>
 							<p
 								className={`${
-									mode ? themes.lightBorderCountry : themes.darkBorderCountry
+									themeContext?.islight
+										? themes.lightBorderCountry
+										: themes.darkBorderCountry
 								} `}
 							>
 								{borderCountry}
@@ -72,13 +74,12 @@ export default function Main({
 			return (
 				<main
 					className={`pt-4 pt-md-5 px-2 px-sm-5 ${
-						mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
+						themeContext?.islight
+							? `${themes.lightModeElements}`
+							: `${themes.darkModeElements}`
 					}`}
 				>
-					<BackToHomePage
-						isLight={true}
-						from='detailsPage'
-					/>
+					<BackToHomePage from='detailsPage' />
 					<div className='row mt-5 gap-5'>
 						<div className='col-12 col-md-7 col-lg-6 col-xxl-4'>
 							<img
@@ -169,13 +170,12 @@ export default function Main({
 			return (
 				<main
 					className={`pt-4 pt-md-5 px-2 px-sm-5 ${
-						mode ? `${themes.lightModeElements}` : `${themes.darkModeElements}`
+						themeContext?.islight
+							? `${themes.lightModeElements}`
+							: `${themes.darkModeElements}`
 					}`}
 				>
-					<BackToHomePage
-						isLight={true}
-						from='detailsPage'
-					/>
+					<BackToHomePage from='detailsPage' />
 					<div className='text-center mt-5'>
 						<h1>No more information about this country!</h1>
 					</div>

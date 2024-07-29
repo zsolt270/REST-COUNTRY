@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { useFetchCountries } from "../hooks/useFetchCountries.ts";
 import type { DetailsPageCountry } from "../services/api/apiTypes.ts";
@@ -8,9 +8,11 @@ import Main from "../components/Main.tsx";
 import Error from "../components/Error.tsx";
 import Loading from "../components/Loading.tsx";
 import styles from "./Pages.module.css";
+import { ThemeContext } from "../services/providers/themeContext.tsx";
 
 export default function DetailsPage() {
-	const [isLight, setIsLight] = useState(true);
+	const themeContext = useContext(ThemeContext);
+
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	const {
@@ -25,14 +27,11 @@ export default function DetailsPage() {
 		return (
 			<div
 				className={`container-fluid px-0 ${
-					isLight ? styles.lightMode : styles.darkMode
+					themeContext?.islight ? styles.lightMode : styles.darkMode
 				}`}
 			>
-				<Header
-					setIsLight={setIsLight}
-					isLight={isLight}
-				/>
-				<Error mode={isLight} />
+				<Header />
+				<Error />
 			</div>
 		);
 	}
@@ -40,18 +39,14 @@ export default function DetailsPage() {
 	return (
 		<div
 			className={`container-fluid px-0 ${
-				isLight ? styles.lightMode : styles.darkMode
+				themeContext?.islight ? styles.lightMode : styles.darkMode
 			}`}
 		>
-			<Header
-				setIsLight={setIsLight}
-				isLight={isLight}
-			/>
+			<Header />
 			{loading ? (
-				<Loading mode={isLight} />
+				<Loading />
 			) : (
 				<Main
-					mode={isLight}
 					path={path[1]}
 					countries={countries}
 					setCountries={setCountries}

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 
-export const useFetchCountries = (urlParam: string) => {
+export const useFetchCountries = (url: string) => {
 	const [loading, setIsLoading] = useState(false);
 	const [error, setError] = useState();
 
@@ -15,12 +15,9 @@ export const useFetchCountries = (urlParam: string) => {
 			abortControllerRef.current = new AbortController();
 			setIsLoading(true);
 			try {
-				const response = await fetch(
-					`https://restcountries.com/v3.1/${urlParam}?fields=flags,name,population,region,capital`,
-					{
-						signal: abortControllerRef.current?.signal,
-					}
-				);
+				const response = await fetch(`https://restcountries.com/v3.1/${url}`, {
+					signal: abortControllerRef.current?.signal,
+				});
 				const data = (await response.json()) as HomePageCountries[];
 				setCountries(data);
 			} catch (error: any) {
@@ -34,7 +31,7 @@ export const useFetchCountries = (urlParam: string) => {
 			}
 		};
 		fetchCountries();
-	}, [urlParam]);
+	}, [url]);
 
 	return { countries, setCountries, error, loading };
 };

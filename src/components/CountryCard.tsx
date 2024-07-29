@@ -1,4 +1,5 @@
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
+import { Link } from "react-router-dom";
 import styles from "./css.modules/CountryCard.module.css";
 
 type CountryCardProps = {
@@ -9,9 +10,10 @@ export default function CountryCard({ countries }: CountryCardProps) {
 	try {
 		const countryList = countries.map((country) => {
 			return (
-				<div
+				<Link
 					key={country.name.common}
-					className='col d-flex justify-content-center '
+					className='col d-flex justify-content-center text-decoration-none'
+					to={`country/${country.name.common}`}
 				>
 					<div
 						className='card mb-5'
@@ -37,7 +39,7 @@ export default function CountryCard({ countries }: CountryCardProps) {
 							</p>
 						</div>
 					</div>
-				</div>
+				</Link>
 			);
 		});
 		return <div className='row'>{countryList}</div>;

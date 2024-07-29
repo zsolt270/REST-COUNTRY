@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { useState } from "react";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import styles from "./Pages.module.css";
@@ -8,13 +7,13 @@ import Main from "../components/Main.tsx";
 import Loading from "../components/Loading.tsx";
 import Error from "../components/Error.tsx";
 import { useFetchCountries } from "../hooks/useFetchCountries.ts";
-//itt az api request, talán elmenteni egy tömbbe és majd abból keresni a filterrel az input értékek meg a select opciók szerint
-//ide kintre majd state-t hogy darkmode-e v sem és pl contexttel levinni minden elementnek
+import { useLocation } from "react-router-dom";
 
 // import { fetchCountries } from "../services/api/fetchCountries.ts";
 
 export default function HomePage() {
 	const [isLight, setIsLight] = useState(true); // ezt lehet contextként kéne átadni, mivel a select és az input + a kártyáknak is kell majd tudnia hogy light-e
+	const location = useLocation();
 	//ha light akkor a divnél styles.darkmode és
 	// const [loading, setIsLoading] = useState(false);
 	// const [error, setError] = useState();
@@ -24,7 +23,48 @@ export default function HomePage() {
 		setCountries,
 		error,
 		loading,
-	}: HomePageCountries | any | boolean = useFetchCountries("all");
+	}: HomePageCountries[] | any | boolean = useFetchCountries(
+		"all?fields=flags,name,population,region,capital"
+	);
+
+	if (error) {
+		return (
+			<div
+				className={`container-fluid px-0 ${
+					isLight ? styles.lightMode : styles.darkMode
+				}`}
+			>
+				<Header
+					setIsLight={setIsLight}
+					isLight={isLight}
+				/>
+				<Error mode={isLight} />
+			</div>
+		);
+	}
+	return (
+		<div
+			className={`container-fluid px-0 ${
+				isLight ? styles.lightMode : styles.darkMode
+			}`}
+		>
+			<Header
+				setIsLight={setIsLight}
+				isLight={isLight}
+			/>
+
+			{loading ? (
+				<Loading mode={isLight} />
+			) : (
+				<Main
+					mode={isLight}
+					path={location.pathname}
+					countries={countries}
+					setCountries={setCountries}
+				/>
+			)}
+		</div>
+	);
 	// console.log(countries);
 	// console.log(error);
 	// console.log(loading);
@@ -55,45 +95,4 @@ export default function HomePage() {
 	// 	// fetchCountries(abortControllerRef, setIsLoading, setCountries, setError);
 	// 	fetchCountries();
 	// }, []);
-	if (error) {
-		return (
-			<div
-				className={`container-fluid px-0 ${
-					isLight ? styles.lightMode : styles.darkMode
-				}`}
-			>
-				{/* ide a context provider */}
-				<Header
-					setIsLight={setIsLight}
-					isLight={isLight}
-				/>
-				<Error mode={isLight} />
-				{/* ide a context provider */}
-			</div>
-		);
-	}
-	return (
-		<div
-			className={`container-fluid px-0 ${
-				isLight ? styles.lightMode : styles.darkMode
-			}`}
-		>
-			{/* ide a context provider */}
-			<Header
-				setIsLight={setIsLight}
-				isLight={isLight}
-			/>
-
-			{loading ? (
-				<Loading mode={isLight} />
-			) : (
-				<Main
-					mode={isLight}
-					countries={countries}
-					setCountries={setCountries}
-				/>
-			)}
-			{/* ide a context provider */}
-		</div>
-	);
 }

@@ -12,14 +12,6 @@ type SelectProp = {
 export default function Select({ setCountries }: SelectProp) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectValue, setSelectValue] = useState("Filter by Region");
-	// const [filteredCountries, setFilteredCountries] = useState<
-	// 	HomePageCountries[]
-	// >([]);
-
-	// useEffect(() => {
-	// 	setCountries(filteredCountries);
-	// 	console.log(countries);
-	// }, []);
 
 	const openSelect = () => {
 		setIsOpen(!isOpen);
@@ -33,14 +25,6 @@ export default function Select({ setCountries }: SelectProp) {
 			continent
 		)) as HomePageCountries[];
 		setCountries(filteredCountries);
-
-		// console.log(countries.filter((country) => country.region == continent));
-		// const filteredCountries = defaultCountries.filter(
-		// 	(country) => country.region == continent
-		// );
-		// setCountries(filteredCountries);
-
-		//fetchelem és azt adom vissza a setcountriesnak és akkor mindig az lesz amit kell fetchelni
 	};
 
 	return (

@@ -12,12 +12,9 @@ import Error from "../components/Error.tsx";
 
 export default function HomePage() {
 	const themeContext = useContext(ThemeContext);
-	// const [isLight, setIsLight] = useState(true);
+
 	const location = useLocation();
-	//ha light akkor a divnél styles.darkmode és
-	// const [loading, setIsLoading] = useState(false);
-	// const [error, setError] = useState();
-	// const [countries, setCountries] = useState<HomePageCountries[]>([]);
+
 	const {
 		countries,
 		setCountries,
@@ -34,12 +31,8 @@ export default function HomePage() {
 					themeContext?.islight ? styles.lightMode : styles.darkMode
 				}`}
 			>
-				<Header
-				// setIsLight={setIsLight}
-				// isLight={isLight}
-				/>
+				<Header />
 				<Error />
-				{/* <Error mode={isLight} /> */}
 			</div>
 		);
 	}
@@ -49,17 +42,12 @@ export default function HomePage() {
 				themeContext?.islight ? styles.lightMode : styles.darkMode
 			}`}
 		>
-			<Header
-			// setIsLight={setIsLight}
-			// isLight={isLight}
-			/>
+			<Header />
 
 			{loading ? (
 				<Loading />
 			) : (
-				// <Loading mode={isLight} />
 				<Main
-					// mode={isLight}
 					path={location.pathname}
 					countries={countries}
 					setCountries={setCountries}
@@ -67,34 +55,4 @@ export default function HomePage() {
 			)}
 		</div>
 	);
-	// console.log(countries);
-	// console.log(error);
-	// console.log(loading);
-	// const abortControllerRef = useRef<AbortController | null>(null);
-
-	// useEffect(() => {
-	// 	const fetchCountries = async () => {
-	// 		abortControllerRef.current?.abort();
-	// 		abortControllerRef.current = new AbortController();
-	// 		setIsLoading(true);
-	// 		try {
-	// 			const response = await fetch(
-	// 				"https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital",
-	// 				{ signal: abortControllerRef.current?.signal }
-	// 			);
-	// 			const data = (await response.json()) as HomePageCountries[];
-	// 			setCountries(data);
-	// 		} catch (error: any) {
-	// 			if (error.name === "AbortError") {
-	// 				console.log(error);
-	// 				return;
-	// 			}
-	// 			setError(error);
-	// 		} finally {
-	// 			setIsLoading(false);
-	// 		}
-	// 	};
-	// 	// fetchCountries(abortControllerRef, setIsLoading, setCountries, setError);
-	// 	fetchCountries();
-	// }, []);
 }

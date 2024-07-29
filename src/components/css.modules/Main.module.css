@@ -3,7 +3,7 @@
 	min-height: 82em;
 }
 .darkModeElements {
-	background-color: var(--darkModeElements);
+	background-color: var(--darkModeBg);
 	min-height: 82em;
 }
 .lightBorderCountry {

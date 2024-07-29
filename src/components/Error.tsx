@@ -3,10 +3,6 @@ import { ThemeContext } from "../services/providers/themeContext.tsx";
 import styles from "./css.modules/Error.module.css";
 import { TryAgainButton } from "./ui/Buttons.tsx";
 
-// type ThemeMode = {
-// 	mode: boolean;
-// };
-// { mode }: ThemeMode
 export default function Error() {
 	const themeContext = useContext(ThemeContext);
 	return (
@@ -20,7 +16,6 @@ export default function Error() {
 			<h1>Something went wrong!</h1>
 			<h2 className='mb-3'>Please try again.</h2>
 			<TryAgainButton />
-			{/* <TryAgainButton isLight={mode} /> */}
 		</div>
 	);
 }

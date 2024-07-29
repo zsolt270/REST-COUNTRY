@@ -2,10 +2,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../services/providers/themeContext";
 import styles from "./css.modules/Loading.module.css";
 
-// type ThemeMode = {
-// 	mode: boolean;
-// };
-// { mode }: ThemeMode
 export default function Loading() {
 	const themeContext = useContext(ThemeContext);
 

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./css.modules/SearchInput.module.css";
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import { fetchSearchedCountry } from "../services/api/fetchSearchedCountry.ts";
+import { ThemeContext } from "../services/providers/themeContext.tsx";
 
 type SelectProp = {
 	setCountries: (countries: HomePageCountries[]) => void;
@@ -9,6 +10,7 @@ type SelectProp = {
 
 export default function SearchInput({ setCountries }: SelectProp) {
 	const [inputValue, setInputValue] = useState("");
+	const themeContext = useContext(ThemeContext);
 
 	const handleInputChange = async (e) => {
 		const value = e.target.value;
@@ -21,11 +23,21 @@ export default function SearchInput({ setCountries }: SelectProp) {
 	};
 
 	return (
-		<div className={styles.customInputGroup}>
-			<i className='bi bi-search'></i>
+		<div
+			className={
+				themeContext?.islight
+					? styles.customInputGroupLight
+					: styles.customInputGroupDark
+			}
+		>
+			<i
+				className={`bi bi-search ${
+					themeContext?.islight ? styles.lightIcon : styles.darkIcon
+				}`}
+			></i>
 			<input
 				type='text'
-				className={styles.input}
+				className={themeContext?.islight ? styles.inputLight : styles.inputDark}
 				placeholder='Search for a country...'
 				value={inputValue}
 				onChange={handleInputChange}

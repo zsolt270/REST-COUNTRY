@@ -1,29 +1,57 @@
-.input {
+.inputLight {
+	background-color: var(--whiteModeInputColors);
+}
+.inputDark {
+	background-color: var(--darkModeElements);
+	color: white;
+}
+.inputLight,
+.inputDark {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	width: 25rem;
 	border: none;
 	border-radius: 0.4rem;
 }
+
+.inputDark::placeholder {
+	color: white;
+}
+
 input:focus {
 	outline: none;
 }
-i {
+
+.lightIcon {
 	color: var(--iconColors);
+}
+.darkIcon {
+	color: white;
+}
+.lightIcon,
+.darkIcon {
 	font-size: 1rem;
 	-webkit-text-stroke: 0.5px;
 	padding-left: 1.8rem;
 }
-.customInputGroup {
+
+.customInputGroupLight {
+	background-color: var(--whiteModeInputColors);
+	border: 0.1px solid white;
+	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
+}
+.customInputGroupDark {
+	background-color: var(--darkModeElements);
+	border: 0.1px solid var(--darkModeBg);
+	box-shadow: 1px 1px 3px 1px var(--darkModeBg);
+}
+.customInputGroupLight,
+.customInputGroupDark {
 	display: flex;
 	align-items: center;
 	gap: 1.3rem;
-	background-color: var(--whiteModeInputColors);
-	border: 0.1px solid white;
 	border-radius: 0.4rem;
-	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
 }
-/* kéne darkmode class is ezekből */
 
 @media only screen and (max-width: 766px) {
 	.customInputGroup {

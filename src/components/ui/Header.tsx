@@ -2,15 +2,14 @@ import { useContext } from "react";
 import { ThemeContext } from "../../services/providers/themeContext";
 import style from "./css.modules/Header.module.css";
 
-// type HeaderProps = {
-// 	setIsLight: (isLight: boolean) => void;
-// 	isLight: boolean;
-// };
-// { setIsLight, isLight }: HeaderProps
 export default function Header() {
 	const themeContext = useContext(ThemeContext);
 	return (
-		<header className='py-3 px-2 px-sm-5  d-flex justify-content-between border-2 border-bottom border-opacity-10'>
+		<header
+			className={`py-3 px-2 px-sm-5  d-flex justify-content-between border-2 border-bottom ${
+				themeContext?.islight ? "" : "border-dark"
+			}`}
+		>
 			<p className={`fw-bold mb-0 ${style.fsSmall}`}>Where in the world?</p>
 			<div
 				className='d-flex gap-1 gap-sm-2 align-items-center'

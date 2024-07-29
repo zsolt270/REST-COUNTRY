@@ -1,3 +1,11 @@
+.darkCard {
+	background-color: var(--darkModeElements);
+	color: white;
+}
+.lightCard {
+	background-color: var(--lightModeBg);
+}
+
 .errorMsgDiv {
 	text-align: center;
 }

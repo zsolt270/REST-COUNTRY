@@ -4,10 +4,8 @@ import styles from "./css.modules/Buttons.module.css";
 import { ThemeContext } from "../../services/providers/themeContext";
 
 type ButtonProps = {
-	// isLight: boolean;
 	from?: "errorPage" | "detailsPage";
 };
-// { isLight }: ButtonProps
 export function TryAgainButton() {
 	const navigation = useNavigate();
 	const themeContext = useContext(ThemeContext);

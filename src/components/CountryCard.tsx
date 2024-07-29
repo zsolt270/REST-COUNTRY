@@ -1,5 +1,7 @@
-import type { HomePageCountries } from "../services/api/apiTypes.ts";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import type { HomePageCountries } from "../services/api/apiTypes.ts";
+import { ThemeContext } from "../services/providers/themeContext.tsx";
 import styles from "./css.modules/CountryCard.module.css";
 
 type CountryCardProps = {
@@ -7,6 +9,7 @@ type CountryCardProps = {
 };
 
 export default function CountryCard({ countries }: CountryCardProps) {
+	const themeContext = useContext(ThemeContext);
 	try {
 		const countryList = countries.map((country) => {
 			return (
@@ -16,7 +19,9 @@ export default function CountryCard({ countries }: CountryCardProps) {
 					to={`country/${country.name.common}`}
 				>
 					<div
-						className='card mb-5'
+						className={`card mb-5 ${
+							themeContext?.islight ? styles.lightCard : styles.darkCard
+						}`}
 						style={{ width: "18rem" }}
 					>
 						<img

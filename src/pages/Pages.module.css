@@ -3,7 +3,7 @@
 	color: var(--lightModeTxtColor);
 }
 .darkMode {
-	background-color: var(--darkModeBg);
+	background-color: var(--darkModeElements);
 	color: var(--darkModeTxtColor);
 }
 

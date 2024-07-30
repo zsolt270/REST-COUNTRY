@@ -15,11 +15,11 @@ const router = createBrowserRouter([
 		// path: "/",
 		path: "/REST-COUNTRY/",
 		element: <App />,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: "/REST-COUNTRY/",
 				element: <HomePage />,
-				errorElement: <ErrorPage />,
 			},
 			{
 				path: "/REST-COUNTRY/country/:country",

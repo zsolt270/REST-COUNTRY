@@ -24,7 +24,7 @@ In addition I made an ErrorPage and other layouts for the loading or error state
 
 ### Links
 
-- [Live Site URL:](https://zsolt270.github.io/REST-COUNTRY/)
+- [Click here to visit the website!](https://zsolt270.github.io/REST-COUNTRY/)
 
 ### Screenshot
 

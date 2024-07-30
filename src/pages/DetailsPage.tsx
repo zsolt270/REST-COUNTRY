@@ -16,6 +16,7 @@ export default function DetailsPage() {
 	const location = useLocation();
 	console.log(location.pathname);
 	const path = location.pathname.split("/");
+	console.log(path);
 	const {
 		countries,
 		setCountries,

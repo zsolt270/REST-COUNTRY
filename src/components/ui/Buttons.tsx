@@ -14,7 +14,7 @@ export function TryAgainButton() {
 		<button
 			className={`${
 				themeContext?.islight ? styles.lightButton : styles.darkButton
-			} ${styles.btn}`}
+			} ${themeContext?.islight ? styles.lightBtn : styles.darkBtn}`}
 			onClick={() => {
 				navigation(0);
 			}}
@@ -30,7 +30,7 @@ export function BackToHomePage({ from }: ButtonProps) {
 		<Link
 			className={`${
 				themeContext?.islight ? styles.lightButton : styles.darkButton
-			} ${styles.backBtn}`}
+			} ${themeContext?.islight ? styles.lightBackBtn : styles.darkBackBtn}`}
 			to={"/"}
 		>
 			<i className='bi bi-arrow-left fs-4 ps-0'></i>

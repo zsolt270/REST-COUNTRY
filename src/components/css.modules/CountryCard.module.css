@@ -2,8 +2,17 @@
 	background-color: var(--darkModeElements);
 	color: white;
 }
+
+.darkCard:hover {
+	box-shadow: 1px 1px 5px 5px var(--iconColors);
+}
+
 .lightCard {
 	background-color: var(--lightModeBg);
+}
+
+.lightCard:hover {
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
 }
 
 .errorMsgDiv {

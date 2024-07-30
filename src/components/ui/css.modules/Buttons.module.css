@@ -8,30 +8,57 @@
 	color: var(--lightModeElements);
 }
 
-.btn,
-.backBtn {
-	padding: 0.4em 2em;
-	border-radius: 0.4rem;
-	border: 0.1px solid white;
-	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
-	font-weight: 600;
-}
-.backBtn {
+.lightBackBtn,
+.darkBackBtn {
 	padding: 0.1em 1.5em;
 	display: inline-flex;
 	align-items: center;
 	gap: 0.7em;
 	text-decoration: none;
 }
-.backBtn i {
+
+.lightBtn,
+.darkBtn,
+.lightBackBtn,
+.darkBackBtn {
+	padding: 0.4em 2em;
+	border-radius: 0.4rem;
+	font-weight: 600;
+}
+
+.lightBtn,
+.lightBackBtn {
+	border: 0.1px solid white;
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 90%);
+}
+
+.darkBtn,
+.darkBackBtn {
+	border: 0.1px solid var(--darkModeBg);
+	box-shadow: 1px 1px 5px 5px var(--darkModeBg);
+}
+
+.lightBackBtn i,
+.darkBackBtn i {
 	padding-top: 0.1em;
 }
 
-.btn:hover,
-.backBtn:hover {
+.lightBtn:hover,
+.lightBackBtn:hover {
 	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
 }
-.btn:active,
-.backBtn:active {
+
+.darkBtn:hover,
+.darkBackBtn:hover {
+	box-shadow: 1px 1px 5px 5px var(--iconColors);
+}
+
+.lightBtn:active,
+.lightBackBtn:active {
 	box-shadow: 1px 1px 5px 5px inset hsl(0, 0%, 70%);
+}
+
+.darkBtn:active,
+.darkBackBtn:active {
+	box-shadow: 1px 1px 5px 5px inset var(--iconColors);
 }

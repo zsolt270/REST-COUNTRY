@@ -94,37 +94,37 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 									<h3 className='fw-bolder'>{countries[0].name.common}</h3>
 								</div>
 							</div>
-							<div className='row mb-4 mb-md-0'>
+							<div className='row mb-4 mb-md-5'>
 								<div className='col-12 col-md mb-4 mb-md-0'>
 									<div className='row'>
-										<p>
+										<p className='fw-light'>
 											<span className='fw-bold'>Native Name: </span>
 											{nativeNames}
 										</p>
 									</div>
 									<div className='row'>
-										<p>
+										<p className='fw-light'>
 											{" "}
 											<span className='fw-bold'>Population: </span>{" "}
 											{countries[0].population}
 										</p>
 									</div>
 									<div className='row'>
-										<p>
+										<p className='fw-light'>
 											{" "}
 											<span className='fw-bold'>Region: </span>
 											{countries[0].region}
 										</p>
 									</div>
 									<div className='row'>
-										<p>
+										<p className='fw-light'>
 											{" "}
 											<span className='fw-bold'>Sub Region: </span>
 											{countries[0].subregion}
 										</p>
 									</div>
 									<div className='row'>
-										<p>
+										<p className='fw-light'>
 											{" "}
 											<span className='fw-bold'>Capital: </span>
 											{countries[0].capital}
@@ -132,24 +132,28 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 									</div>
 								</div>
 								<div className='col'>
-									<p>
-										{" "}
-										<span className='fw-bold'>Top Level Domain: </span>
-										{tlds}
-									</p>
-									<div className='row'></div>
-									<p>
-										{" "}
-										<span className='fw-bold'>Currencies: </span>
-										{countries[0].currencies[currenciesKey].name}
-									</p>
-									<div className='row'></div>
-									<p>
-										{" "}
-										<span className='fw-bold'>Languages: </span>
-										{languages}
-									</p>
-									<div className='row'></div>
+									<div className='row'>
+										<p className='fw-light'>
+											{" "}
+											<span className='fw-bold'>Top Level Domain: </span>
+											{tlds}
+										</p>
+									</div>
+									<div className='row'>
+										<p className='fw-light'>
+											{" "}
+											<span className='fw-bold'>Currencies: </span>
+											{countries[0].currencies[currenciesKey].name}
+										</p>
+									</div>
+
+									<div className='row'>
+										<p className='fw-light'>
+											{" "}
+											<span className='fw-bold'>Languages: </span>
+											{languages}
+										</p>
+									</div>
 								</div>
 							</div>
 							<div className='row'>

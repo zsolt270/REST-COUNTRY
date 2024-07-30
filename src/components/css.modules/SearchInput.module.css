@@ -40,11 +40,23 @@ input:focus {
 	border: 0.1px solid white;
 	box-shadow: 1px 1px 3px 1px hsl(0, 0%, 90%);
 }
+
+.customInputGroupLight:hover,
+.customInputGroupLight:has(> input:focus) {
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
+}
+
 .customInputGroupDark {
 	background-color: var(--darkModeElements);
 	border: 0.1px solid var(--darkModeBg);
 	box-shadow: 1px 1px 3px 1px var(--darkModeBg);
 }
+
+.customInputGroupDark:hover,
+.customInputGroupDark:has(> input:focus) {
+	box-shadow: 1px 1px 5px 5px var(--iconColors);
+}
+
 .customInputGroupLight,
 .customInputGroupDark {
 	display: flex;
@@ -54,7 +66,8 @@ input:focus {
 }
 
 @media only screen and (max-width: 766px) {
-	.customInputGroup {
+	.customInputGroupLight,
+	.customInputGroupDark {
 		margin-bottom: 3rem;
 	}
 }

@@ -38,6 +38,18 @@
 	font-weight: bold;
 }
 
+.selectLight:hover,
+.selectLight:has(+ .optionsLight:hover),
+.optionsLight:hover {
+	box-shadow: 1px 1px 5px 5px hsl(0, 0%, 70%);
+}
+
+.selectDark:hover,
+.selectDark:has(+ .optionsDark:hover),
+.optionsDark:hover {
+	box-shadow: 1px 1px 5px 5px var(--iconColors);
+}
+
 .optionsLight {
 	background-color: var(--whiteModeInputColors);
 	color: var(--lightModeTxtColor);

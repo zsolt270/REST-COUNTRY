@@ -11,12 +11,12 @@ import { ThemeContextProvider } from "./services/providers/themeContext.tsx";
 
 const router = createBrowserRouter([
 	{
-		path: "/REST-COUNTRY/",
+		path: "/",
 		element: <HomePage />,
 		errorElement: <ErrorPage />,
 	},
 	{
-		path: "/REST-COUNTRY/country/:country",
+		path: "/country/:country",
 		element: <DetailsPage />,
 	},
 ]);

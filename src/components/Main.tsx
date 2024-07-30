@@ -34,7 +34,7 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 		);
 	} else if (path == "country") {
 		console.log(path);
-
+		console.log(countries);
 		try {
 			const nativeNames = Object.keys(countries[0].name.nativeName).map(
 				(nativeKey) => {

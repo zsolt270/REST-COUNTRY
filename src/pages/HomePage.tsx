@@ -14,7 +14,6 @@ export default function HomePage() {
 	const themeContext = useContext(ThemeContext);
 
 	const location = useLocation();
-
 	const {
 		countries,
 		setCountries,

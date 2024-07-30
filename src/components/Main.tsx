@@ -16,7 +16,7 @@ type MainProps = {
 export default function Main({ path, countries, setCountries }: MainProps) {
 	const themeContext = useContext(ThemeContext);
 
-	if (path == "/") {
+	if (path == "/REST-COUNTRY/") {
 		return (
 			<main
 				className={`pt-4 pt-md-5 px-2 px-sm-5 ${
@@ -33,7 +33,7 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 				<CountryCard countries={countries} />
 			</main>
 		);
-	} else if (path == "country") {
+	} else if (path == "/REST-COUNTRY/country") {
 		try {
 			const nativeNames = Object.keys(countries[0].name.nativeName).map(
 				(nativeKey) => {

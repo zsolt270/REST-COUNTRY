@@ -26,3 +26,5 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - Live Site URL:
 
 ### Screenshot
+
+![Screenshot of the HomePage Desktop view]("./public/homepagelight.png")

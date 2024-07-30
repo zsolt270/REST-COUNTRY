@@ -33,7 +33,7 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 				<CountryCard countries={countries} />
 			</main>
 		);
-	} else if (path == "/country/") {
+	} else if (path == "country") {
 		try {
 			const nativeNames = Object.keys(countries[0].name.nativeName).map(
 				(nativeKey) => {

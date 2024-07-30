@@ -4,7 +4,7 @@ import type { HomePageCountries } from "../services/api/apiTypes.ts";
 
 export const useFetchCountries = (url: string) => {
 	const [loading, setIsLoading] = useState(false);
-	const [error, setError] = useState();
+	const [error, setError] = useState(true);
 
 	const [countries, setCountries] = useState<HomePageCountries[]>([]);
 

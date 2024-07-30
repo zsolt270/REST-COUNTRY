@@ -21,7 +21,7 @@ export default function DetailsPage() {
 		error,
 		loading,
 	}: HomePageCountries[] | any | boolean = useFetchCountries(
-		`name/${path[2]}?fullText=true&fields=name,tld,currencies,capital,region,subregion,languages,borders,population,flags`
+		`name/${path[3]}?fullText=true&fields=name,tld,currencies,capital,region,subregion,languages,borders,population,flags`
 	);
 	if (error) {
 		return (

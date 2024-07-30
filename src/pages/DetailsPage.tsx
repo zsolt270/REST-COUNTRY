@@ -49,7 +49,7 @@ export default function DetailsPage() {
 				<Loading />
 			) : (
 				<Main
-					path={path[1]}
+					path={path[2]}
 					countries={countries}
 					setCountries={setCountries}
 				/>

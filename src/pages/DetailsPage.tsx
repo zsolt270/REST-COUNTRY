@@ -14,6 +14,7 @@ export default function DetailsPage() {
 	const themeContext = useContext(ThemeContext);
 
 	const location = useLocation();
+	console.log(location.pathname);
 	const path = location.pathname.split("/");
 	const {
 		countries,

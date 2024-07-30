@@ -12,7 +12,7 @@ export default function SearchInput({ setCountries }: SelectProp) {
 	const [inputValue, setInputValue] = useState("");
 	const themeContext = useContext(ThemeContext);
 
-	const handleInputChange = async (e) => {
+	const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		setInputValue(value);
 

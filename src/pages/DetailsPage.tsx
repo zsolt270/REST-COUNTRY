@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { useFetchCountries } from "../hooks/useFetchCountries.ts";
-import type { DetailsPageCountry } from "../services/api/apiTypes.ts";
+import type { HomePageCountries } from "../services/api/apiTypes.ts";
 import Header from "../components/ui/Header.tsx";
 import Main from "../components/Main.tsx";
 import Error from "../components/Error.tsx";
@@ -20,7 +20,7 @@ export default function DetailsPage() {
 		setCountries,
 		error,
 		loading,
-	}: DetailsPageCountry[] | any | boolean = useFetchCountries(
+	}: HomePageCountries[] | any | boolean = useFetchCountries(
 		`name/${path[2]}?fullText=true&fields=name,tld,currencies,capital,region,subregion,languages,borders,population,flags`
 	);
 	if (error) {

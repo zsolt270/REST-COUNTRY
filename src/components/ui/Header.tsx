@@ -14,7 +14,7 @@ export default function Header() {
 			<div
 				className='d-flex gap-1 gap-sm-2 align-items-center'
 				onClick={() => {
-					themeContext.setIsLight(!themeContext?.islight);
+					themeContext?.setIsLight(!themeContext?.islight);
 				}}
 			>
 				<i

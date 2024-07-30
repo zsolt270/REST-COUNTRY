@@ -1,5 +1,4 @@
 import type { HomePageCountries } from "../services/api/apiTypes.ts";
-import type { DetailsPageCountry } from "../services/api/apiTypes.ts";
 import { BackToHomePage } from "../components/ui/Buttons.tsx";
 import CountryCard from "./CountryCard.tsx";
 import themes from "./css.modules/Main.module.css";
@@ -10,7 +9,7 @@ import { useContext } from "react";
 
 type MainProps = {
 	path: string;
-	countries: HomePageCountries[] | DetailsPageCountry[];
+	countries: HomePageCountries[];
 	setCountries?: () => void;
 };
 
@@ -42,15 +41,18 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 				}
 			);
 
-			const tlds = countries[0].tld.map((countryTld: string) => {
+			const tlds = countries[0].tld?.map((countryTld: string) => {
 				return countryTld + " | ";
 			});
-			const currenciesKey = Object.keys(countries[0].currencies);
-
-			const languages = Object.keys(countries[0].languages).map((language) => {
-				return countries[0].languages[language] + ", ";
+			const currencies = Object.keys(countries[0].currencies!).map(
+				(currency) => {
+					return countries[0].currencies![currency].name + ", ";
+				}
+			);
+			const languages = Object.keys(countries[0].languages!).map((language) => {
+				return countries[0].languages![language] + ", ";
 			});
-			const borderCountries = countries[0].borders.map(
+			const borderCountries = countries[0].borders?.map(
 				(borderCountry: string) => {
 					return (
 						<div
@@ -143,7 +145,7 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 										<p className='fw-light'>
 											{" "}
 											<span className='fw-bold'>Currencies: </span>
-											{countries[0].currencies[currenciesKey].name}
+											{currencies}
 										</p>
 									</div>
 
@@ -181,7 +183,7 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 				>
 					<BackToHomePage from='detailsPage' />
 					<div className='text-center mt-5'>
-						<h1>No more information about this country!</h1>
+						<h1>Something went wrong!</h1>
 					</div>
 				</main>
 			);

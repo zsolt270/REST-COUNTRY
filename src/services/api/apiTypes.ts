@@ -28,18 +28,10 @@ export type HomePageCountries = {
 	name: nameTypes;
 	population: number;
 	region: string;
+	subregion?: string;
 	capital: string;
-};
-
-export type DetailsPageCountry = {
-	flags: flagTypes;
-	name: nameTypes;
-	population: number;
-	region: string;
-	subregion: string;
-	capital: string;
-	tld: string[];
-	currencies: currenciesTypes;
-	languages: languagesTypes;
-	borders: string[];
+	tld?: string[];
+	currencies?: currenciesTypes;
+	languages?: languagesTypes;
+	borders?: string[];
 };

@@ -15,7 +15,6 @@ type MainProps = {
 
 export default function Main({ path, countries, setCountries }: MainProps) {
 	const themeContext = useContext(ThemeContext);
-	console.log(path);
 	if (path == "/REST-COUNTRY/") {
 		return (
 			<main
@@ -34,6 +33,8 @@ export default function Main({ path, countries, setCountries }: MainProps) {
 			</main>
 		);
 	} else if (path == "country") {
+		console.log(path);
+
 		try {
 			const nativeNames = Object.keys(countries[0].name.nativeName).map(
 				(nativeKey) => {

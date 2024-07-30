@@ -31,7 +31,7 @@ export function BackToHomePage({ from }: ButtonProps) {
 			className={`${
 				themeContext?.islight ? styles.lightButton : styles.darkButton
 			} ${themeContext?.islight ? styles.lightBackBtn : styles.darkBackBtn}`}
-			to={"/"}
+			to={"/REST-COUNTRY/"}
 		>
 			<i className='bi bi-arrow-left fs-4 ps-0'></i>
 			<span className=''>{from === "errorPage" ? "HomePage" : "Back"}</span>

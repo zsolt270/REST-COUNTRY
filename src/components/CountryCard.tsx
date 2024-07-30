@@ -16,7 +16,7 @@ export default function CountryCard({ countries }: CountryCardProps) {
 				<Link
 					key={country.name.common}
 					className='col d-flex justify-content-center text-decoration-none'
-					to={`country/${country.name.common}`}
+					to={`/REST-COUNTRY/country/${country.name.common}`}
 				>
 					<div
 						className={`card mb-5 ${

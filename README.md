@@ -15,7 +15,7 @@ In addition I made an ErrorPage and other layouts for the loading or error state
 ### Built with
 
 - HTML
-- CSS custom properties
+- CSS
 - TypeScript
 - [Bootstrap](https://getbootstrap.com/)
 - [React](https://reactjs.org/)
